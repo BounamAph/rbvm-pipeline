@@ -1,0 +1,19 @@
+{
+  "kev": {
+    "fetched": "2026-09-21",
+    "catalogVersion": "2026.09.21",
+    "dateReleased": "2026-09-21T18:46:35.0873Z",
+    "rows": 1717
+  },
+  "epss": {
+    "fetched": "2026-09-21",
+    "model_version": "v2026.06.15",
+    "score_date": "2026-09-21T12:03:23Z",
+    "rows": 377333
+  },
+  "trivy": {
+    "fetched": "2026-09-21",
+    "postes": 8,
+    "detections": 17603
+  }
+}

@@ -1,0 +1,7 @@
+data/raw/*
+!data/raw/.gitkeep
+data/*.parquet
+output/catalogue.parquet
+output/cve_produit.parquet
+.venv/
+__pycache__/

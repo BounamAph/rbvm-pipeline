@@ -1,0 +1,15 @@
+{
+  "postes": {
+    "debian:9": 71,
+    "nginx:1.16": 363,
+    "node:12": 582,
+    "postgres:10": 231,
+    "python:3.7": 13380,
+    "tomcat:8.5.50": 686,
+    "ubuntu:18.04": 0,
+    "wordpress:5.4": 2290
+  },
+  "sans_detection": [
+    "ubuntu:18.04"
+  ]
+}
