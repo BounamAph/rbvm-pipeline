@@ -8,6 +8,10 @@ parc: sources
 	$(PY) src/10_load_trivy.py
 	$(PY) src/11_prioritize.py
 	$(PY) src/12_report.py
+# Configurations à risque : scan IaC avant (iac/) et après correction (iac-secure/)
+iac:
+	trivy config -f json -o output/iac_avant.json iac/
+	trivy config -f json -o output/iac_apres.json iac-secure/
 nvd:
 	$(PY) src/01_fetch_nvd.py $(NVD_ARGS)
 catalogue: sources nvd
