@@ -2,7 +2,7 @@
 
 Gestion des vulnérabilités de bout en bout sur un parc simulé : détections brutes (scans Trivy) → CVE uniques → enrichissement CISA KEV / FIRST EPSS → priorisation P1–P4 → applications à mettre à jour → campagnes. Puis validation de la règle sur l'ensemble du catalogue NVD. En complément, détection des **configurations à risque** dans l'infrastructure as code (Terraform AWS, Dockerfile) avant déploiement, avec la version corrigée.
 
-**Chiffre clé** : sur un parc de 8 systèmes, 8 144 détections se ramènent à 2 020 CVE uniques et 138 paquets source ; mettre à jour les 10 premiers ferme 48 % des 241 CVE urgentes.
+**Chiffre clé** : sur un parc de 8 systèmes, 8 144 détections se ramènent à 2 020 CVE uniques et 138 paquets source. Selon l'exploitation réelle seule (KEV, EPSS), **241 CVE sont urgentes**, et mettre à jour les 10 premiers paquets en ferme 48 %. Une fois l'**exposition réseau** prise en compte, **369 CVE sont urgentes, dont 235 sur des services exposés à Internet**, et les 10 premières mises à jour en ferment 37,7 %.
 
 ![Entonnoir](output/entonnoir.png)
 ![Top 15](output/top15_paquets.png)
@@ -17,6 +17,8 @@ Deux files de traitement : une file **conformité**, triée par volume (postes �
 | P2 Élevé | EPSS ≥ 0,10 ou (CVSS ≥ 9,0 et exploitable à distance) | Prochain cycle de patch |
 | P3 Standard | CVSS ≥ 7,0 | Cycle trimestriel |
 | P4 Différé | Le reste | Suivi |
+
+**Exposition.** Une CVE exploitable à distance (vecteur CVSS `AV:N`) présente sur un poste **exposé à Internet** monte d'un niveau (P4 → P3, P3 → P2 ; P1 ne bouge pas). Les ports et l'utilisateur de chaque image sont lus dans les scans Trivy (`data/surface.json`) ; l'exposition, qui est une décision d'architecture, est déclarée à la main dans `data/exposition.json` (`internet`, `interne`, `aucun`), comme le ferait une CMDB. Le niveau avant exposition reste visible (colonne `niveau_base`) : 256 CVE sont relevées (128 de P3 à P2, 128 de P4 à P3).
 
 ## Configurations à risque (IaC)
 
@@ -57,10 +59,11 @@ Produit dans `output/` : `RBVM_parc.xlsx` (6 onglets : Synthese, Campagnes, Voie
 ## Limites
 
 - EPSS est une probabilité d'exploitation à 30 jours, pas une certitude ; KEV est centré sur les produits en usage dans les administrations américaines.
-- Le catalogue ne connaît ni l'exposition réseau ni la criticité métier : la grille est un point de départ, pas une décision.
+- Le catalogue NVD (phase B) ne connaît ni l'exposition réseau ni la criticité métier : la grille est un point de départ, pas une décision.
+- Sur le parc, l'exposition est portée par l'image, pas par le service : une faille dans une bibliothèque du conteneur wordpress est relevée même si le service web ne la charge pas. C'est une approximation prudente. Les ports sont ceux que l'image déclare, pas ceux réellement ouverts (à vérifier par un scan Nmap). « Root » désigne l'utilisateur de démarrage : nginx et postgres basculent ensuite vers un compte non privilégié.
 - Le parc est simulé par des images de conteneurs scannées avec Trivy : de vraies CVE sur de vrais paquets, mais des systèmes Linux où la mise à jour est plus simple que sur un parc Windows ; l'intérêt est la méthode, pas l'échelle.
 - Le CVSS retenu est v3.1, sinon v3.0, sinon v2 (colonne `cvss_version`) ; les CVE sans score sont conservées, jamais supprimées.
 
 ## Prochaines étapes
 
-Intégrer les constats IaC au classeur (onglet de suivi de remédiation avant / après) et les prioriser par sévérité et exposition ; lancer `trivy config` en CI (GitHub Actions) à chaque push. Brancher un inventaire réel (agent Wazuh Vulnerability Detection, export EDR) à la place des scans Trivy : le format d'entrée de `10_load_trivy.py` est le seul point à adapter. Ajouter l'exposition réseau (interne / exposé) et la criticité métier des postes dans la règle.
+Intégrer les constats IaC au classeur (onglet de suivi de remédiation avant / après) et les prioriser par sévérité et exposition ; lancer `trivy config` en CI (GitHub Actions) à chaque push. Brancher un inventaire réel (agent Wazuh Vulnerability Detection, export EDR) à la place des scans Trivy : le format d'entrée de `10_load_trivy.py` est le seul point à adapter. Vérifier l'exposition par un scan Nmap des conteneurs (ports déclarés contre ports réellement ouverts), ajouter un onglet « Surface d'attaque » au classeur et la criticité métier des postes dans la règle.

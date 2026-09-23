@@ -1,121 +1,121 @@
 paquet,famille,nb_cve,cve_p1,cve_p2,nb_postes,nb_detections,binaires,nb_binaires,versions_installees,version_corrigee,correctif_dispo,epss_max,cve_urgentes,statut,poids,rang,cve_urgentes_cumulees_pct
-freetype,système,5,2,1,5,21,"libfreetype-dev, libfreetype6, libfreetype6-dev",3,"2.12.1+dfsg-5, 2.6.3-3.2+deb9u2, 2.9.1-3+deb10u1",2.9.1-3+deb10u3,oui,0.44303,3,à corriger,25,1,1.2
-apache2,système,40,1,29,1,160,"apache2, apache2-bin, apache2-data, apache2-utils",4,2.4.38-3+deb10u3,2.4.59-1~deb10u1,oui,0.99999,30,à corriger,40,2,13.5
-org.apache.tomcat:tomcat-catalina,applicatif,25,1,11,1,25,org.apache.tomcat:tomcat-catalina,1,8.5.50,"9.0.96, 10.1.30, 11.0.1",oui,0.99927,12,à corriger,25,3,18.4
-libwebp,système,13,1,10,3,43,"libwebp-dev, libwebp6, libwebpdemux2, libwebpmux2, libwebpmux3",5,"0.5.2-1+deb9u1, 0.6.1-2",0.6.1-2+deb10u3,oui,0.99979,11,à corriger,39,4,23.0
-org.apache.tomcat:tomcat-coyote,applicatif,16,1,8,1,16,org.apache.tomcat:tomcat-coyote,1,8.5.50,"9.0.44, 8.5.64",oui,0.99999,9,à corriger,16,5,26.6
-glibc,système,56,1,6,4,336,"libc-bin, libc-dev-bin, libc6, libc6-dev",4,"2.28-10, 2.36-9+deb12u1",2.36-9+deb12u7,oui,0.8833,7,à corriger,224,6,29.5
-git,système,30,1,6,3,80,"git, git-man",2,"1:2.11.0-3+deb9u7, 1:2.20.1-2+deb10u1, 1:2.39.2-1.1",1:2.39.5-0+deb12u3,oui,0.88533,7,à corriger,90,7,32.4
-nghttp2,système,5,1,1,3,10,libnghttp2-14,1,"1.36.0-2+deb10u1, 1.52.0-1",1.52.0-1+deb12u3,oui,0.99999,2,à corriger,15,8,33.2
-openssl,système,68,0,19,6,281,"libssl-dev, libssl1.1, libssl3, openssl",4,"1.1.0l-1~deb9u5, 1.1.0l-1~deb9u6, 1.1.1d-0+deb10u2",3.0.20-1~deb12u2,oui,0.95404,19,à corriger,408,9,41.0
-imagemagick,système,219,0,16,3,2410,"imagemagick, imagemagick-6-common, imagemagick-6.q16, libmagickcore-6-arch-config, libmagickcore-6-headers, libmagickcore-6.q16-3",16,"8:6.9.10.23+dfsg-2.1+deb10u1, 8:6.9.11.60+dfsg-1.6, 8:6.9.7.4+dfsg-11+deb9u13",8:6.9.7.4+dfsg-11+deb9u14,oui,0.89855,16,à corriger,657,10,47.5
-curl,système,77,0,12,3,351,"curl, libcurl3-gnutls, libcurl4, libcurl4-openssl-dev",4,"7.64.0-4, 7.64.0-4+deb10u1, 7.88.1-10+deb12u1",7.88.1-10+deb12u9,oui,0.78483,12,à corriger,231,11,52.5
-expat,système,51,0,9,4,122,"libexpat1, libexpat1-dev",2,"2.2.6-2+deb10u1, 2.5.0-1",2.5.0-1+deb12u3,oui,0.35867,9,à corriger,204,12,56.1
-binutils,système,168,0,8,2,618,"binutils, binutils-common, binutils-x86-64-linux-gnu, libbinutils, libctf-nobfd0, libctf0",7,"2.28-5, 2.40-2",,non / fin de vie,0.14207,8,migration / acceptation,336,13,59.4
-openssh,système,37,0,8,3,41,openssh-client,1,"1:7.4p1-10+deb9u7, 1:7.9p1-10+deb10u1, 1:9.2p1-2",1:9.2p1-2+deb12u9,oui,0.99506,8,à corriger,111,14,62.7
-stdlib,applicatif,121,0,7,1,121,stdlib,1,v1.16.7,"1.25.9, 1.26.2",oui,0.91969,7,à corriger,121,15,65.6
-openldap,système,22,0,7,4,74,"libldap-2.4-2, libldap-2.5-0, libldap-common",3,"2.4.44+dfsg-5+deb9u8, 2.4.47+dfsg-3+deb10u1, 2.4.47+dfsg-3+deb10u2",2.4.47+dfsg-3+deb10u7,oui,0.84224,7,à corriger,88,16,68.4
-gnutls28,système,34,0,6,6,56,libgnutls30,1,"3.5.8-5+deb9u6, 3.6.7-4, 3.6.7-4+deb10u3",3.7.9-2+deb12u7,oui,0.73327,6,à corriger,204,17,70.9
-libxml2,système,54,0,5,4,116,"libxml2, libxml2-dev",2,"2.9.14+dfsg-1.3~deb12u1, 2.9.4+dfsg1-2.2+deb9u6, 2.9.4+dfsg1-7+b3",2.9.4+dfsg1-7+deb10u6,oui,0.22965,5,à corriger,216,18,73.0
-python2.7,système,19,0,5,2,80,"libpython2.7-minimal, libpython2.7-stdlib, python2.7, python2.7-minimal",4,"2.7.13-2+deb9u6, 2.7.16-2+deb10u1",2.7.16-2+deb10u4,oui,0.35963,5,à corriger,38,19,75.0
-perl,système,27,0,4,7,134,"libperl5.24, libperl5.28, libperl5.36, perl, perl-base, perl-modules-5.24",8,"5.24.1-3+deb9u7, 5.28.1-6, 5.28.1-6+deb10u1",5.36.0-7+deb12u3,oui,0.11334,4,à corriger,189,20,76.6
-sqlite3,système,28,0,4,5,65,"libsqlite3-0, libsqlite3-dev",2,"3.16.2-5+deb9u3, 3.27.2-3, 3.40.1-2",3.40.1-2+deb12u2,oui,0.72547,4,à corriger,140,21,78.3
-glib2.0,système,30,0,3,3,135,"libglib2.0-0, libglib2.0-bin, libglib2.0-data, libglib2.0-dev, libglib2.0-dev-bin",5,"2.50.3-2+deb9u2, 2.58.3-2+deb10u2, 2.74.6-2",2.74.6-2+deb12u9,oui,0.0408,3,à corriger,90,22,79.5
-krb5,système,17,0,3,5,174,"krb5-multidev, libgssapi-krb5-2, libgssrpc4, libk5crypto3, libkadm5clnt-mit11, libkadm5clnt-mit12",13,"1.15-1+deb9u3, 1.17-3, 1.20.1-2",1.20.1-2+deb12u5,oui,0.10276,3,à corriger,85,23,80.7
-openexr,système,41,0,3,2,82,"libopenexr-3-1-30, libopenexr-dev, libopenexr22",3,"2.2.0-11+deb9u4, 3.1.5-5",,non / fin de vie,0.01766,3,migration / acceptation,82,24,82.0
-zlib,système,5,0,3,4,15,"zlib1g, zlib1g-dev",2,"1:1.2.11.dfsg-1, 1:1.2.13.dfsg-1",1:1.2.11.dfsg-1+deb10u2,oui,0.51733,3,à corriger,20,25,83.2
-systemd,système,25,0,2,7,130,"libsystemd0, libudev1",2,"232-25+deb9u13, 241-7~deb10u2, 241-7~deb10u3",252.39-1~deb12u2,oui,0.99988,2,à corriger,175,26,84.0
-ghostscript,système,36,0,2,1,108,"ghostscript, libgs9, libgs9-common",3,9.27~dfsg-2+deb10u3,9.27~dfsg-2+deb10u9,oui,0.27992,2,à corriger,36,27,84.8
-apr-util,système,7,0,2,4,10,"libaprutil1, libaprutil1-dbd-sqlite3, libaprutil1-ldap",3,"1.5.4-3, 1.6.1-4, 1.6.3-1",1.6.3-1+deb12u1,oui,0.01417,2,à corriger,28,28,85.7
-mariadb,système,26,0,2,1,104,"libmariadb-dev, libmariadb-dev-compat, libmariadb3, mariadb-common",4,1:10.11.3-1,1:10.11.6-0+deb12u1,oui,0.01782,2,à corriger,26,29,86.5
-pcre2,système,9,0,2,2,33,"libpcre2-16-0, libpcre2-32-0, libpcre2-8-0, libpcre2-dev, libpcre2-posix3",5,"10.32-5, 10.42-1",10.42-1+deb12u1,oui,0.03366,2,à corriger,18,30,87.3
-aom,système,7,0,2,1,7,libaom3,1,3.6.0-1,3.6.0-1+deb12u3,oui,0.01264,2,à corriger,7,31,88.1
-libonig,système,7,0,2,1,7,libonig5,1,6.9.1-1,,non / fin de vie,0.10539,2,migration / acceptation,7,32,88.9
-libksba,système,2,0,2,1,2,libksba8,1,1.3.5-2,1.3.5-2+deb10u2,oui,0.01648,2,à corriger,2,33,89.8
-python3.11,système,57,0,1,1,228,"libpython3.11-minimal, libpython3.11-stdlib, python3.11, python3.11-minimal",4,3.11.2-6,3.11.2-6+deb12u8,oui,0.20459,1,à corriger,57,34,90.2
-postgresql-15,système,55,0,1,1,110,"libpq-dev, libpq5",2,15.3-0+deb12u1,15.9-0+deb12u1,oui,0.9003,1,à corriger,55,35,90.6
-libpng1.6,système,16,0,1,2,32,"libpng-dev, libpng16-16",2,"1.6.28-1+deb9u1, 1.6.39-2",1.6.39-2+deb12u5,oui,0.04113,1,à corriger,32,36,91.0
-libssh2,système,9,0,1,3,12,libssh2-1,1,"1.10.0-3+b1, 1.8.0-2.1",1.8.0-2.1+deb10u1,oui,0.11659,1,à corriger,27,37,91.4
-wget,système,9,0,1,3,12,wget,1,"1.18-5+deb9u3, 1.20.1-1.1, 1.21.3-1+b2",1.21.3-1+deb12u1,oui,0.01104,1,à corriger,27,38,91.8
-libx11,système,7,0,1,3,37,"libx11-6, libx11-data, libx11-dev",3,"2:1.6.7-1, 2:1.8.4-2+deb12u1",2:1.8.4-2+deb12u2,oui,0.10634,1,à corriger,21,39,92.2
-libxslt,système,9,0,1,2,16,"libxslt1-dev, libxslt1.1",2,"1.1.32-2.2~deb10u1, 1.1.35-1",1.1.35-1+deb12u2,oui,0.21623,1,à corriger,18,40,92.6
-dpkg,système,3,0,1,5,14,"dpkg, dpkg-dev, libdpkg-perl",3,"1.18.25, 1.19.7, 1.21.22",1.21.23,oui,0.0324,1,à corriger,15,41,93.0
-libtasn1-6,système,3,0,1,4,5,libtasn1-6,1,"4.13-3, 4.19.0-2",4.19.0-2+deb12u1,oui,0.02192,1,à corriger,12,42,93.4
-lz4,système,2,0,1,6,9,liblz4-1,1,"0.0~r131-2+deb9u1, 1.8.3-1",1.8.3-1+deb10u1,oui,0.09116,1,à corriger,12,43,93.9
-github.com/opencontainers/runc,applicatif,11,0,1,1,11,github.com/opencontainers/runc,1,v1.0.1,"1.3.6, 1.4.3, 1.5.0-rc.3",oui,0.18087,1,à corriger,11,44,94.3
-bzip2,système,2,0,1,4,8,"bzip2, libbz2-1.0, libbz2-dev",3,"1.0.6-8.1, 1.0.8-5+b1",,non / fin de vie,0.07977,1,migration / acceptation,8,45,94.7
-subversion,système,4,0,1,2,8,"libsvn1, subversion",2,"1.10.4-1+deb10u1, 1.14.2-4+b2",1.14.2-4+deb12u1,oui,0.40075,1,à corriger,8,46,95.1
-db5.3,système,1,0,1,6,7,"libdb5.3, libdb5.3-dev",2,"5.3.28+dfsg1-0.5, 5.3.28-12+deb9u1",,non / fin de vie,0.45426,1,migration / acceptation,6,47,95.5
-libidn2,système,2,0,1,3,4,libidn2-0,1,"2.0.5-1, 2.0.5-1+deb10u1",2.0.5-1+deb10u1,oui,0.03708,1,à corriger,6,48,95.9
-libwmf,système,4,0,1,1,12,"libwmf-0.2-7, libwmf-dev, libwmflite-0.2-7",3,0.2.12-5.1,,non / fin de vie,0.1021,1,migration / acceptation,4,49,96.3
-libbsd,système,1,0,1,3,3,libbsd0,1,0.9.1-2,0.9.1-2+deb10u1,oui,0.02805,1,à corriger,3,50,96.7
-libcroco,système,3,0,1,1,3,libcroco3,1,0.6.11-3,,non / fin de vie,0.12996,1,migration / acceptation,3,51,97.1
-qs,applicatif,3,0,1,1,3,qs,1,6.5.2,6.16.0,oui,0.15064,1,à corriger,3,52,97.5
-decode-uri-component,applicatif,2,0,1,1,2,decode-uri-component,1,0.2.0,0.5.0,oui,0.23789,1,à corriger,2,53,98.0
-ip,applicatif,2,0,1,1,2,ip,1,1.1.5,"2.0.1, 1.1.9",oui,0.08279,1,à corriger,2,54,98.4
-org.apache.tomcat:tomcat-websocket,applicatif,2,0,1,1,2,org.apache.tomcat:tomcat-websocket,1,8.5.50,"11.0.0-M17, 10.1.19, 9.0.86, 8.5.99",oui,0.86608,1,à corriger,2,55,98.8
-jbig2dec,système,1,0,1,1,1,libjbig2dec0,1,0.16-1,0.16-1+deb10u1,oui,0.0274,1,à corriger,1,56,99.2
-minimist,applicatif,1,0,1,1,1,minimist,1,1.2.5,"1.2.6, 0.2.4",oui,0.04581,1,à corriger,1,57,99.6
-tough-cookie,applicatif,1,0,1,1,1,tough-cookie,1,2.4.3,4.1.3,oui,0.02542,1,à corriger,1,58,100.0
-tiff,système,82,0,0,3,224,"libtiff-dev, libtiff5, libtiff6, libtiffxx6",4,"4.1.0+git191117-2~deb10u1, 4.5.0-6",4.5.0-6+deb12u4,oui,0.048,0,à corriger,246,59,100.0
-libde265,système,64,0,0,2,72,libde265-0,1,"1.0.11-1, 1.0.3-1+b1",1.0.3-1+deb10u3,oui,0.01814,0,à corriger,128,60,100.0
-util-linux,système,14,0,0,7,234,"bsdutils, fdisk, libblkid-dev, libblkid1, libfdisk1, libmount-dev",13,"1:2.29.2-1+deb9u1, 1:2.33.1-0.1, 1:2.38.1-5+b1",2.38.1-5+deb12u1,oui,0.02242,0,à corriger,98,61,100.0
-openjpeg2,système,31,0,0,3,55,"libopenjp2-7, libopenjp2-7-dev",2,"2.1.2-1.1+deb9u7, 2.3.0-2+deb10u1, 2.5.0-2",2.5.0-2+deb12u3,oui,0.04973,0,à corriger,93,62,100.0
-libheif,système,37,0,0,2,38,libheif1,1,"1.15.1-1, 1.3.2-2~deb10u1",1.15.1-1+deb12u1,oui,0.01368,0,à corriger,74,63,100.0
-ncurses,système,10,0,0,7,162,"libncurses-dev, libncurses5, libncurses5-dev, libncurses6, libncursesw5, libncursesw5-dev",12,"6.0+20161126-1+deb9u2, 6.1+20181013-2+deb10u2, 6.4-4",6.1+20181013-2+deb10u5,oui,0.03231,0,à corriger,70,64,100.0
-gnupg2,système,9,0,0,7,108,"dirmngr, gnupg, gnupg-agent, gnupg-l10n, gnupg-utils, gpg",12,"2.1.18-8~deb9u4, 2.2.12-1+deb10u1, 2.2.40-1.1",2.2.40-1.1+deb12u2,oui,0.02844,0,à corriger,63,65,100.0
-libgcrypt20,système,6,0,0,7,18,libgcrypt20,1,"1.10.1-3, 1.7.6-2+deb9u4, 1.8.4-5",1.8.4-5+deb10u1,oui,0.02342,0,à corriger,42,66,100.0
-elfutils,système,10,0,0,4,12,libelf1,1,"0.168-1+deb9u1, 0.176-1.1, 0.188-2.1",0.176-1.1+deb10u1,oui,0.02396,0,à corriger,40,67,100.0
-coreutils,système,5,0,0,7,11,coreutils,1,"8.26-3, 8.30-3, 9.1-1",,non / fin de vie,0.00437,0,migration / acceptation,35,68,100.0
-shadow,système,5,0,0,7,32,"login, passwd",2,"1:4.13+dfsg1-1+b1, 1:4.4-4.1+deb9u1, 1:4.5-1.1",1:4.13+dfsg1-1+deb12u1,oui,0.01694,0,à corriger,35,69,100.0
-bluez,système,25,0,0,1,50,"libbluetooth-dev, libbluetooth3",2,5.66-1,5.66-1+deb12u2,oui,0.07879,0,à corriger,25,70,100.0
-libsepol,système,4,0,0,6,24,libsepol1,1,"2.6-2, 2.8-1",,non / fin de vie,0.00597,0,migration / acceptation,24,71,100.0
-tar,système,6,0,0,4,9,tar,1,"1.30+dfsg-6, 1.34+dfsg-1.2",1.34+dfsg-1.2+deb12u1,oui,0.03992,0,à corriger,24,72,100.0
-p11-kit,système,5,0,0,4,17,"libp11-kit0, p11-kit, p11-kit-modules",3,"0.23.15-2, 0.24.1-2",0.23.15-2+deb10u1,oui,0.03528,0,à corriger,20,73,100.0
-gdk-pixbuf,système,9,0,0,2,43,"gir1.2-gdkpixbuf-2.0, libgdk-pixbuf-2.0-0, libgdk-pixbuf-2.0-dev, libgdk-pixbuf2.0-0, libgdk-pixbuf2.0-bin, libgdk-pixbuf2.0-common",7,"2.36.5-2+deb9u2, 2.42.10+dfsg-1, 2.42.10+dfsg-1+b1",2.42.10+dfsg-1+deb12u4,oui,0.0347,0,à corriger,18,74,100.0
-libjpeg-turbo,système,6,0,0,3,15,"libjpeg-dev, libjpeg62-turbo, libjpeg62-turbo-dev",3,"1:1.5.1-2+deb9u1, 1:1.5.2-2+b1",1:1.5.2-2+deb10u1,oui,0.03654,0,à corriger,18,75,100.0
-nettle,système,3,0,0,6,17,"libhogweed4, libnettle6",2,"3.3-1+deb9u1, 3.4.1-1",3.4.1-1+deb10u1,oui,0.02708,0,à corriger,18,76,100.0
-avahi,système,8,0,0,2,30,"libavahi-client3, libavahi-common-data, libavahi-common3",3,"0.6.32-2, 0.7-4+b1",0.7-4+deb10u3,oui,0.00443,0,à corriger,16,77,100.0
-pam,système,4,0,0,4,28,"libpam-modules, libpam-modules-bin, libpam-runtime, libpam0g",4,"1.3.1-5, 1.5.2-6",1.5.2-6+deb12u2,oui,0.0046,0,à corriger,16,78,100.0
-cups,système,7,0,0,2,15,"libcups2, libcupsimage2",2,"2.2.1-8+deb9u7, 2.2.10-6+deb10u3",2.2.10-6+deb10u9,oui,0.02421,0,à corriger,14,79,100.0
-tar,applicatif,13,0,0,1,13,tar,1,4.4.19,7.5.8,oui,0.00929,0,à corriger,13,80,100.0
-apt,système,3,0,0,4,12,"apt, libapt-pkg5.0, libapt-pkg6.0",3,"1.8.2, 1.8.2.1, 2.6.1",1.8.2.2,oui,0.01305,0,à corriger,12,81,100.0
-cairo,système,6,0,0,2,36,"libcairo-gobject2, libcairo-script-interpreter2, libcairo2, libcairo2-dev",4,"1.14.8-1+deb9u1, 1.16.0-7",,non / fin de vie,0.03435,0,migration / acceptation,12,82,100.0
-e2fsprogs,système,2,0,0,6,29,"comerr-dev, e2fslibs, e2fsprogs, libcom-err2, libcomerr2, libext2fs2",7,"1.43.4-2+deb9u2, 1.44.5-1+deb10u2, 1.44.5-1+deb10u3",1.44.5-1+deb10u3,oui,0.01393,0,à corriger,12,83,100.0
-gzip,système,3,0,0,4,5,gzip,1,"1.12-1, 1.9-3",1.9-3+deb10u1,oui,0.0507,0,à corriger,12,84,100.0
-xz-utils,système,3,0,0,4,11,"liblzma-dev, liblzma5, xz-utils",3,"5.2.4-1, 5.4.1-0.2",5.4.1-1+deb12u1,oui,0.0507,0,à corriger,12,85,100.0
-libevent,système,8,0,0,1,48,"libevent-2.1-7, libevent-core-2.1-7, libevent-dev, libevent-extra-2.1-7, libevent-openssl-2.1-7, libevent-pthreads-2.1-7",6,2.1.12-stable-8,2.1.12-stable-8+deb12u1,oui,0.00587,0,à corriger,8,86,100.0
-libgd2,système,4,0,0,2,8,libgd3,1,"2.2.4-2+deb9u5, 2.2.5-5.2",2.2.5-5.2+deb10u1,oui,0.03435,0,à corriger,8,87,100.0
-pip,applicatif,7,0,0,1,7,pip,1,23.0.1,26.2.0,oui,0.00476,0,à corriger,7,88,100.0
-gcc-8,système,2,0,0,3,48,"cpp-8, g++-8, gcc-8, gcc-8-base, libasan5, libatomic1",18,"1:8.3.0-6, 8.3.0-6",,non / fin de vie,0.03181,0,migration / acceptation,6,89,100.0
-harfbuzz,système,3,0,0,2,3,libharfbuzz0b,1,"1.4.2-1, 6.0.0+dfsg-3",,non / fin de vie,0.01812,0,migration / acceptation,6,90,100.0
-icu,système,2,0,0,3,5,"icu-devtools, libicu-dev, libicu63, libicu72",4,"63.1-6+deb10u1, 72.1-3",72.1-3+deb12u1,oui,0.01213,0,à corriger,6,91,100.0
-libzstd,système,2,0,0,3,6,libzstd1,1,1.3.8+dfsg-3,1.3.8+dfsg-3+deb10u2,oui,0.00431,0,à corriger,6,92,100.0
-patch,système,6,0,0,1,6,patch,1,2.7.6-7,,non / fin de vie,0.06492,0,migration / acceptation,6,93,100.0
-pcre3,système,1,0,0,6,10,"libpcre16-3, libpcre3, libpcre3-dev, libpcre32-3, libpcrecpp0v5",5,"2:8.39-12, 2:8.39-3",,non / fin de vie,0.04182,0,migration / acceptation,6,94,100.0
-unzip,système,3,0,0,2,3,unzip,1,"6.0-23+deb10u1, 6.0-28",6.0-23+deb10u3,oui,0.02421,0,à corriger,6,95,100.0
-brace-expansion,applicatif,5,0,0,1,5,brace-expansion,1,1.1.11,"5.0.8, 3.0.3, 2.1.3, 1.1.17",oui,0.00643,0,à corriger,5,96,100.0
-libxpm,système,5,0,0,1,5,libxpm4,1,1:3.5.12-1,1:3.5.12-1+deb10u2,oui,0.01273,0,à corriger,5,97,100.0
-dbus,système,4,0,0,1,4,libdbus-1-3,1,1.12.20-0+deb10u1,1.12.28-0+deb10u1,oui,0.01405,0,à corriger,4,98,100.0
-graphite2,système,2,0,0,2,2,libgraphite2-3,1,"1.3.10-1, 1.3.14-1",1.3.14-1+deb12u1,oui,0.02169,0,à corriger,4,99,100.0
-minimatch,applicatif,4,0,0,1,4,minimatch,1,3.0.4,3.0.5,oui,0.01816,0,à corriger,4,100,100.0
-setuptools,applicatif,4,0,0,1,4,setuptools,1,57.5.0,83.0.0,oui,0.02617,0,à corriger,4,101,100.0
-djvulibre,système,3,0,0,1,9,"libdjvulibre-dev, libdjvulibre-text, libdjvulibre21",3,"3.5.28-2, 3.5.28-2+b1",3.5.28-2.2~deb12u1,oui,0.01042,0,à corriger,3,102,100.0
-gcc-6,système,1,0,0,3,25,"cpp-6, g++-6, gcc-6, gcc-6-base, libasan3, libatomic1",19,"1:6.3.0-18+deb9u1, 6.3.0-18+deb9u1",,non / fin de vie,0.0212,0,migration / acceptation,3,103,100.0
-gmp,système,1,0,0,3,3,libgmp10,1,2:6.1.2+dfsg-4,2:6.1.2+dfsg-4+deb10u1,oui,0.03712,0,à corriger,3,104,100.0
-libexif,système,3,0,0,1,6,"libexif-dev, libexif12",2,0.6.24-1+b1,0.6.24-1+deb12u1,oui,0.00193,0,à corriger,3,105,100.0
-procps,système,1,0,0,3,6,"libproc2-0, libprocps7, procps",3,"2:3.3.15-2, 2:4.0.2-3",,non / fin de vie,0.00256,0,migration / acceptation,3,106,100.0
-acl,système,2,0,0,1,2,libacl1,1,2.3.1-3,,non / fin de vie,0.00153,0,migration / acceptation,2,107,100.0
-cyrus-sasl2,système,1,0,0,2,4,"libsasl2-2, libsasl2-modules-db",2,2.1.27+dfsg-1+deb10u1,2.1.27+dfsg-1+deb10u2,oui,0.04123,0,à corriger,2,108,100.0
-dav1d,système,2,0,0,1,2,libdav1d6,1,1.0.0-2,1.0.0-2+deb12u1,oui,0.01835,0,à corriger,2,109,100.0
-file,système,2,0,0,1,6,"file, libmagic-mgc, libmagic1",3,1:5.30-1+deb9u3,,non / fin de vie,0.03581,0,migration / acceptation,2,110,100.0
-form-data,applicatif,2,0,0,1,2,form-data,1,2.3.2,"2.5.6, 3.0.5, 4.0.6",oui,0.01769,0,à corriger,2,111,100.0
-gcc-12,système,2,0,0,1,34,"cpp-12, g++-12, gcc-12, gcc-12-base, libasan8, libatomic1",17,12.2.0-14,12.2.0-14+deb12u1,oui,0.00906,0,à corriger,2,112,100.0
-golang.org/x/sys,applicatif,2,0,0,1,2,golang.org/x/sys,1,v0.0.0-20210817142637-7d9622a276b7,0.44.0,oui,0.02951,0,à corriger,2,113,100.0
-lcms2,système,2,0,0,1,4,"liblcms2-2, liblcms2-dev",2,2.14-2,2.14-2+deb12u1,oui,0.00938,0,à corriger,2,114,100.0
-libcap2,système,2,0,0,1,2,libcap2,1,1:2.66-4,1:2.66-4+deb12u3,oui,0.00201,0,à corriger,2,115,100.0
-m4,système,2,0,0,1,2,m4,1,1.4.19-3,,non / fin de vie,0.02957,0,migration / acceptation,2,116,100.0
-nginx,système,2,0,0,1,2,nginx,1,1.16.1-1~buster,,non / fin de vie,0.02195,0,migration / acceptation,2,117,100.0
+freetype,système,5,2,3,5,21,"libfreetype-dev, libfreetype6, libfreetype6-dev",3,"2.12.1+dfsg-5, 2.6.3-3.2+deb9u2, 2.9.1-3+deb10u1",2.9.1-3+deb10u3,oui,0.44303,5,à corriger,25,1,1.3
+apache2,système,40,1,36,1,160,"apache2, apache2-bin, apache2-data, apache2-utils",4,2.4.38-3+deb10u3,2.4.59-1~deb10u1,oui,0.99999,37,à corriger,40,2,11.2
+libwebp,système,13,1,12,3,43,"libwebp-dev, libwebp6, libwebpdemux2, libwebpmux2, libwebpmux3",5,"0.5.2-1+deb9u1, 0.6.1-2",0.6.1-2+deb10u3,oui,0.99979,13,à corriger,39,3,14.7
+org.apache.tomcat:tomcat-catalina,applicatif,25,1,11,1,25,org.apache.tomcat:tomcat-catalina,1,8.5.50,"9.0.96, 10.1.30, 11.0.1",oui,0.99927,12,à corriger,25,4,17.9
+glibc,système,56,1,9,4,336,"libc-bin, libc-dev-bin, libc6, libc6-dev",4,"2.28-10, 2.36-9+deb12u1",2.36-9+deb12u7,oui,0.8833,10,à corriger,224,5,20.6
+org.apache.tomcat:tomcat-coyote,applicatif,16,1,8,1,16,org.apache.tomcat:tomcat-coyote,1,8.5.50,"9.0.44, 8.5.64",oui,0.99999,9,à corriger,16,6,23.0
+git,système,30,1,6,3,80,"git, git-man",2,"1:2.11.0-3+deb9u7, 1:2.20.1-2+deb10u1, 1:2.39.2-1.1",1:2.39.5-0+deb12u3,oui,0.88533,7,à corriger,90,7,24.9
+nghttp2,système,5,1,2,3,10,libnghttp2-14,1,"1.36.0-2+deb10u1, 1.52.0-1",1.52.0-1+deb12u3,oui,0.99999,3,à corriger,15,8,25.7
+imagemagick,système,219,0,22,3,2410,"imagemagick, imagemagick-6-common, imagemagick-6.q16, libmagickcore-6-arch-config, libmagickcore-6-headers, libmagickcore-6.q16-3",16,"8:6.9.10.23+dfsg-2.1+deb10u1, 8:6.9.11.60+dfsg-1.6, 8:6.9.7.4+dfsg-11+deb9u13",8:6.9.7.4+dfsg-11+deb9u14,oui,0.89855,22,à corriger,657,9,31.6
+openssl,système,68,0,22,6,281,"libssl-dev, libssl1.1, libssl3, openssl",4,"1.1.0l-1~deb9u5, 1.1.0l-1~deb9u6, 1.1.1d-0+deb10u2",3.0.20-1~deb12u2,oui,0.95404,22,à corriger,408,10,37.4
+curl,système,77,0,22,3,351,"curl, libcurl3-gnutls, libcurl4, libcurl4-openssl-dev",4,"7.64.0-4, 7.64.0-4+deb10u1, 7.88.1-10+deb12u1",7.88.1-10+deb12u9,oui,0.78483,22,à corriger,231,11,43.3
+expat,système,51,0,18,4,122,"libexpat1, libexpat1-dev",2,"2.2.6-2+deb10u1, 2.5.0-1",2.5.0-1+deb12u3,oui,0.35867,18,à corriger,204,12,48.1
+openldap,système,22,0,16,4,74,"libldap-2.4-2, libldap-2.5-0, libldap-common",3,"2.4.44+dfsg-5+deb9u8, 2.4.47+dfsg-3+deb10u1, 2.4.47+dfsg-3+deb10u2",2.4.47+dfsg-3+deb10u7,oui,0.84224,16,à corriger,88,13,52.4
+libxml2,système,54,0,15,4,116,"libxml2, libxml2-dev",2,"2.9.14+dfsg-1.3~deb12u1, 2.9.4+dfsg1-2.2+deb9u6, 2.9.4+dfsg1-7+b3",2.9.4+dfsg1-7+deb10u6,oui,0.22965,15,à corriger,216,14,56.4
+sqlite3,système,28,0,11,5,65,"libsqlite3-0, libsqlite3-dev",2,"3.16.2-5+deb9u3, 3.27.2-3, 3.40.1-2",3.40.1-2+deb12u2,oui,0.72547,11,à corriger,140,15,59.4
+gnutls28,système,34,0,10,6,56,libgnutls30,1,"3.5.8-5+deb9u6, 3.6.7-4, 3.6.7-4+deb10u3",3.7.9-2+deb12u7,oui,0.73327,10,à corriger,204,16,62.0
+binutils,système,168,0,8,2,618,"binutils, binutils-common, binutils-x86-64-linux-gnu, libbinutils, libctf-nobfd0, libctf0",7,"2.28-5, 2.40-2",,non / fin de vie,0.14207,8,migration / acceptation,336,17,64.2
+openssh,système,37,0,8,3,41,openssh-client,1,"1:7.4p1-10+deb9u7, 1:7.9p1-10+deb10u1, 1:9.2p1-2",1:9.2p1-2+deb12u9,oui,0.99506,8,à corriger,111,18,66.3
+perl,système,27,0,7,7,134,"libperl5.24, libperl5.28, libperl5.36, perl, perl-base, perl-modules-5.24",8,"5.24.1-3+deb9u7, 5.28.1-6, 5.28.1-6+deb10u1",5.36.0-7+deb12u3,oui,0.11334,7,à corriger,189,19,68.2
+stdlib,applicatif,121,0,7,1,121,stdlib,1,v1.16.7,"1.25.9, 1.26.2",oui,0.91969,7,à corriger,121,20,70.1
+libde265,système,64,0,6,2,72,libde265-0,1,"1.0.11-1, 1.0.3-1+b1",1.0.3-1+deb10u3,oui,0.01814,6,à corriger,128,21,71.7
+glib2.0,système,30,0,6,3,135,"libglib2.0-0, libglib2.0-bin, libglib2.0-data, libglib2.0-dev, libglib2.0-dev-bin",5,"2.50.3-2+deb9u2, 2.58.3-2+deb10u2, 2.74.6-2",2.74.6-2+deb12u9,oui,0.0408,6,à corriger,90,22,73.3
+libonig,système,7,0,6,1,7,libonig5,1,6.9.1-1,,non / fin de vie,0.10539,6,migration / acceptation,7,23,74.9
+tiff,système,82,0,5,3,224,"libtiff-dev, libtiff5, libtiff6, libtiffxx6",4,"4.1.0+git191117-2~deb10u1, 4.5.0-6",4.5.0-6+deb12u4,oui,0.048,5,à corriger,246,24,76.2
+krb5,système,17,0,5,5,174,"krb5-multidev, libgssapi-krb5-2, libgssrpc4, libk5crypto3, libkadm5clnt-mit11, libkadm5clnt-mit12",13,"1.15-1+deb9u3, 1.17-3, 1.20.1-2",1.20.1-2+deb12u5,oui,0.10276,5,à corriger,85,25,77.5
+python2.7,système,19,0,5,2,80,"libpython2.7-minimal, libpython2.7-stdlib, python2.7, python2.7-minimal",4,"2.7.13-2+deb9u6, 2.7.16-2+deb10u1",2.7.16-2+deb10u4,oui,0.35963,5,à corriger,38,26,78.9
+ghostscript,système,36,0,4,1,108,"ghostscript, libgs9, libgs9-common",3,9.27~dfsg-2+deb10u3,9.27~dfsg-2+deb10u9,oui,0.27992,4,à corriger,36,27,79.9
+openexr,système,41,0,3,2,82,"libopenexr-3-1-30, libopenexr-dev, libopenexr22",3,"2.2.0-11+deb9u4, 3.1.5-5",,non / fin de vie,0.01766,3,migration / acceptation,82,28,80.7
+libheif,système,37,0,3,2,38,libheif1,1,"1.15.1-1, 1.3.2-2~deb10u1",1.15.1-1+deb12u1,oui,0.01368,3,à corriger,74,29,81.6
+libssh2,système,9,0,3,3,12,libssh2-1,1,"1.10.0-3+b1, 1.8.0-2.1",1.8.0-2.1+deb10u1,oui,0.11659,3,à corriger,27,30,82.4
+zlib,système,5,0,3,4,15,"zlib1g, zlib1g-dev",2,"1:1.2.11.dfsg-1, 1:1.2.13.dfsg-1",1:1.2.11.dfsg-1+deb10u2,oui,0.51733,3,à corriger,20,31,83.2
+libxpm,système,5,0,3,1,5,libxpm4,1,1:3.5.12-1,1:3.5.12-1+deb10u2,oui,0.01273,3,à corriger,5,32,84.0
+systemd,système,25,0,2,7,130,"libsystemd0, libudev1",2,"232-25+deb9u13, 241-7~deb10u2, 241-7~deb10u3",252.39-1~deb12u2,oui,0.99988,2,à corriger,175,33,84.5
+openjpeg2,système,31,0,2,3,55,"libopenjp2-7, libopenjp2-7-dev",2,"2.1.2-1.1+deb9u7, 2.3.0-2+deb10u1, 2.5.0-2",2.5.0-2+deb12u3,oui,0.04973,2,à corriger,93,34,85.0
+apr-util,système,7,0,2,4,10,"libaprutil1, libaprutil1-dbd-sqlite3, libaprutil1-ldap",3,"1.5.4-3, 1.6.1-4, 1.6.3-1",1.6.3-1+deb12u1,oui,0.01417,2,à corriger,28,35,85.6
+mariadb,système,26,0,2,1,104,"libmariadb-dev, libmariadb-dev-compat, libmariadb3, mariadb-common",4,1:10.11.3-1,1:10.11.6-0+deb12u1,oui,0.01782,2,à corriger,26,36,86.1
+libx11,système,7,0,2,3,37,"libx11-6, libx11-data, libx11-dev",3,"2:1.6.7-1, 2:1.8.4-2+deb12u1",2:1.8.4-2+deb12u2,oui,0.10634,2,à corriger,21,37,86.6
+p11-kit,système,5,0,2,4,17,"libp11-kit0, p11-kit, p11-kit-modules",3,"0.23.15-2, 0.24.1-2",0.23.15-2+deb10u1,oui,0.03528,2,à corriger,20,38,87.2
+libxslt,système,9,0,2,2,16,"libxslt1-dev, libxslt1.1",2,"1.1.32-2.2~deb10u1, 1.1.35-1",1.1.35-1+deb12u2,oui,0.21623,2,à corriger,18,39,87.7
+nettle,système,3,0,2,6,17,"libhogweed4, libnettle6",2,"3.3-1+deb9u1, 3.4.1-1",3.4.1-1+deb10u1,oui,0.02708,2,à corriger,18,40,88.2
+pcre2,système,9,0,2,2,33,"libpcre2-16-0, libpcre2-32-0, libpcre2-8-0, libpcre2-dev, libpcre2-posix3",5,"10.32-5, 10.42-1",10.42-1+deb12u1,oui,0.03366,2,à corriger,18,41,88.8
+lz4,système,2,0,2,6,9,liblz4-1,1,"0.0~r131-2+deb9u1, 1.8.3-1",1.8.3-1+deb10u1,oui,0.09116,2,à corriger,12,42,89.3
+libgd2,système,4,0,2,2,8,libgd3,1,"2.2.4-2+deb9u5, 2.2.5-5.2",2.2.5-5.2+deb10u1,oui,0.03435,2,à corriger,8,43,89.8
+aom,système,7,0,2,1,7,libaom3,1,3.6.0-1,3.6.0-1+deb12u3,oui,0.01264,2,à corriger,7,44,90.4
+gcc-8,système,2,0,2,3,48,"cpp-8, g++-8, gcc-8, gcc-8-base, libasan5, libatomic1",18,"1:8.3.0-6, 8.3.0-6",,non / fin de vie,0.03181,2,migration / acceptation,6,45,90.9
+libidn2,système,2,0,2,3,4,libidn2-0,1,"2.0.5-1, 2.0.5-1+deb10u1",2.0.5-1+deb10u1,oui,0.03708,2,à corriger,6,46,91.4
+libksba,système,2,0,2,1,2,libksba8,1,1.3.5-2,1.3.5-2+deb10u2,oui,0.01648,2,à corriger,2,47,92.0
+ncurses,système,10,0,1,7,162,"libncurses-dev, libncurses5, libncurses5-dev, libncurses6, libncursesw5, libncursesw5-dev",12,"6.0+20161126-1+deb9u2, 6.1+20181013-2+deb10u2, 6.4-4",6.1+20181013-2+deb10u5,oui,0.03231,1,à corriger,70,48,92.2
+gnupg2,système,9,0,1,7,108,"dirmngr, gnupg, gnupg-agent, gnupg-l10n, gnupg-utils, gpg",12,"2.1.18-8~deb9u4, 2.2.12-1+deb10u1, 2.2.40-1.1",2.2.40-1.1+deb12u2,oui,0.02844,1,à corriger,63,49,92.5
+python3.11,système,57,0,1,1,228,"libpython3.11-minimal, libpython3.11-stdlib, python3.11, python3.11-minimal",4,3.11.2-6,3.11.2-6+deb12u8,oui,0.20459,1,à corriger,57,50,92.8
+postgresql-15,système,55,0,1,1,110,"libpq-dev, libpq5",2,15.3-0+deb12u1,15.9-0+deb12u1,oui,0.9003,1,à corriger,55,51,93.0
+libgcrypt20,système,6,0,1,7,18,libgcrypt20,1,"1.10.1-3, 1.7.6-2+deb9u4, 1.8.4-5",1.8.4-5+deb10u1,oui,0.02342,1,à corriger,42,52,93.3
+libpng1.6,système,16,0,1,2,32,"libpng-dev, libpng16-16",2,"1.6.28-1+deb9u1, 1.6.39-2",1.6.39-2+deb12u5,oui,0.04113,1,à corriger,32,53,93.6
+wget,système,9,0,1,3,12,wget,1,"1.18-5+deb9u3, 1.20.1-1.1, 1.21.3-1+b2",1.21.3-1+deb12u1,oui,0.01104,1,à corriger,27,54,93.9
+libjpeg-turbo,système,6,0,1,3,15,"libjpeg-dev, libjpeg62-turbo, libjpeg62-turbo-dev",3,"1:1.5.1-2+deb9u1, 1:1.5.2-2+b1",1:1.5.2-2+deb10u1,oui,0.03654,1,à corriger,18,55,94.1
+dpkg,système,3,0,1,5,14,"dpkg, dpkg-dev, libdpkg-perl",3,"1.18.25, 1.19.7, 1.21.22",1.21.23,oui,0.0324,1,à corriger,15,56,94.4
+gzip,système,3,0,1,4,5,gzip,1,"1.12-1, 1.9-3",1.9-3+deb10u1,oui,0.0507,1,à corriger,12,57,94.7
+libtasn1-6,système,3,0,1,4,5,libtasn1-6,1,"4.13-3, 4.19.0-2",4.19.0-2+deb12u1,oui,0.02192,1,à corriger,12,58,94.9
+xz-utils,système,3,0,1,4,11,"liblzma-dev, liblzma5, xz-utils",3,"5.2.4-1, 5.4.1-0.2",5.4.1-1+deb12u1,oui,0.0507,1,à corriger,12,59,95.2
+github.com/opencontainers/runc,applicatif,11,0,1,1,11,github.com/opencontainers/runc,1,v1.0.1,"1.3.6, 1.4.3, 1.5.0-rc.3",oui,0.18087,1,à corriger,11,60,95.5
+bzip2,système,2,0,1,4,8,"bzip2, libbz2-1.0, libbz2-dev",3,"1.0.6-8.1, 1.0.8-5+b1",,non / fin de vie,0.07977,1,migration / acceptation,8,61,95.7
+subversion,système,4,0,1,2,8,"libsvn1, subversion",2,"1.10.4-1+deb10u1, 1.14.2-4+b2",1.14.2-4+deb12u1,oui,0.40075,1,à corriger,8,62,96.0
+db5.3,système,1,0,1,6,7,"libdb5.3, libdb5.3-dev",2,"5.3.28+dfsg1-0.5, 5.3.28-12+deb9u1",,non / fin de vie,0.45426,1,migration / acceptation,6,63,96.3
+libwmf,système,4,0,1,1,12,"libwmf-0.2-7, libwmf-dev, libwmflite-0.2-7",3,0.2.12-5.1,,non / fin de vie,0.1021,1,migration / acceptation,4,64,96.5
+gcc-6,système,1,0,1,3,25,"cpp-6, g++-6, gcc-6, gcc-6-base, libasan3, libatomic1",19,"1:6.3.0-18+deb9u1, 6.3.0-18+deb9u1",,non / fin de vie,0.0212,1,migration / acceptation,3,65,96.8
+gmp,système,1,0,1,3,3,libgmp10,1,2:6.1.2+dfsg-4,2:6.1.2+dfsg-4+deb10u1,oui,0.03712,1,à corriger,3,66,97.1
+libbsd,système,1,0,1,3,3,libbsd0,1,0.9.1-2,0.9.1-2+deb10u1,oui,0.02805,1,à corriger,3,67,97.3
+libcroco,système,3,0,1,1,3,libcroco3,1,0.6.11-3,,non / fin de vie,0.12996,1,migration / acceptation,3,68,97.6
+qs,applicatif,3,0,1,1,3,qs,1,6.5.2,6.16.0,oui,0.15064,1,à corriger,3,69,97.9
+cyrus-sasl2,système,1,0,1,2,4,"libsasl2-2, libsasl2-modules-db",2,2.1.27+dfsg-1+deb10u1,2.1.27+dfsg-1+deb10u2,oui,0.04123,1,à corriger,2,70,98.1
+decode-uri-component,applicatif,2,0,1,1,2,decode-uri-component,1,0.2.0,0.5.0,oui,0.23789,1,à corriger,2,71,98.4
+ip,applicatif,2,0,1,1,2,ip,1,1.1.5,"2.0.1, 1.1.9",oui,0.08279,1,à corriger,2,72,98.7
+nginx,système,2,0,1,1,2,nginx,1,1.16.1-1~buster,,non / fin de vie,0.02195,1,migration / acceptation,2,73,98.9
+org.apache.tomcat:tomcat-websocket,applicatif,2,0,1,1,2,org.apache.tomcat:tomcat-websocket,1,8.5.50,"11.0.0-M17, 10.1.19, 9.0.86, 8.5.99",oui,0.86608,1,à corriger,2,74,99.2
+jbig2dec,système,1,0,1,1,1,libjbig2dec0,1,0.16-1,0.16-1+deb10u1,oui,0.0274,1,à corriger,1,75,99.5
+minimist,applicatif,1,0,1,1,1,minimist,1,1.2.5,"1.2.6, 0.2.4",oui,0.04581,1,à corriger,1,76,99.7
+tough-cookie,applicatif,1,0,1,1,1,tough-cookie,1,2.4.3,4.1.3,oui,0.02542,1,à corriger,1,77,100.0
+util-linux,système,14,0,0,7,234,"bsdutils, fdisk, libblkid-dev, libblkid1, libfdisk1, libmount-dev",13,"1:2.29.2-1+deb9u1, 1:2.33.1-0.1, 1:2.38.1-5+b1",2.38.1-5+deb12u1,oui,0.02242,0,à corriger,98,78,100.0
+elfutils,système,10,0,0,4,12,libelf1,1,"0.168-1+deb9u1, 0.176-1.1, 0.188-2.1",0.176-1.1+deb10u1,oui,0.02396,0,à corriger,40,79,100.0
+coreutils,système,5,0,0,7,11,coreutils,1,"8.26-3, 8.30-3, 9.1-1",,non / fin de vie,0.00437,0,migration / acceptation,35,80,100.0
+shadow,système,5,0,0,7,32,"login, passwd",2,"1:4.13+dfsg1-1+b1, 1:4.4-4.1+deb9u1, 1:4.5-1.1",1:4.13+dfsg1-1+deb12u1,oui,0.01694,0,à corriger,35,81,100.0
+bluez,système,25,0,0,1,50,"libbluetooth-dev, libbluetooth3",2,5.66-1,5.66-1+deb12u2,oui,0.07879,0,à corriger,25,82,100.0
+libsepol,système,4,0,0,6,24,libsepol1,1,"2.6-2, 2.8-1",,non / fin de vie,0.00597,0,migration / acceptation,24,83,100.0
+tar,système,6,0,0,4,9,tar,1,"1.30+dfsg-6, 1.34+dfsg-1.2",1.34+dfsg-1.2+deb12u1,oui,0.03992,0,à corriger,24,84,100.0
+gdk-pixbuf,système,9,0,0,2,43,"gir1.2-gdkpixbuf-2.0, libgdk-pixbuf-2.0-0, libgdk-pixbuf-2.0-dev, libgdk-pixbuf2.0-0, libgdk-pixbuf2.0-bin, libgdk-pixbuf2.0-common",7,"2.36.5-2+deb9u2, 2.42.10+dfsg-1, 2.42.10+dfsg-1+b1",2.42.10+dfsg-1+deb12u4,oui,0.0347,0,à corriger,18,85,100.0
+avahi,système,8,0,0,2,30,"libavahi-client3, libavahi-common-data, libavahi-common3",3,"0.6.32-2, 0.7-4+b1",0.7-4+deb10u3,oui,0.00443,0,à corriger,16,86,100.0
+pam,système,4,0,0,4,28,"libpam-modules, libpam-modules-bin, libpam-runtime, libpam0g",4,"1.3.1-5, 1.5.2-6",1.5.2-6+deb12u2,oui,0.0046,0,à corriger,16,87,100.0
+cups,système,7,0,0,2,15,"libcups2, libcupsimage2",2,"2.2.1-8+deb9u7, 2.2.10-6+deb10u3",2.2.10-6+deb10u9,oui,0.02421,0,à corriger,14,88,100.0
+tar,applicatif,13,0,0,1,13,tar,1,4.4.19,7.5.8,oui,0.00929,0,à corriger,13,89,100.0
+apt,système,3,0,0,4,12,"apt, libapt-pkg5.0, libapt-pkg6.0",3,"1.8.2, 1.8.2.1, 2.6.1",1.8.2.2,oui,0.01305,0,à corriger,12,90,100.0
+cairo,système,6,0,0,2,36,"libcairo-gobject2, libcairo-script-interpreter2, libcairo2, libcairo2-dev",4,"1.14.8-1+deb9u1, 1.16.0-7",,non / fin de vie,0.03435,0,migration / acceptation,12,91,100.0
+e2fsprogs,système,2,0,0,6,29,"comerr-dev, e2fslibs, e2fsprogs, libcom-err2, libcomerr2, libext2fs2",7,"1.43.4-2+deb9u2, 1.44.5-1+deb10u2, 1.44.5-1+deb10u3",1.44.5-1+deb10u3,oui,0.01393,0,à corriger,12,92,100.0
+libevent,système,8,0,0,1,48,"libevent-2.1-7, libevent-core-2.1-7, libevent-dev, libevent-extra-2.1-7, libevent-openssl-2.1-7, libevent-pthreads-2.1-7",6,2.1.12-stable-8,2.1.12-stable-8+deb12u1,oui,0.00587,0,à corriger,8,93,100.0
+pip,applicatif,7,0,0,1,7,pip,1,23.0.1,26.2.0,oui,0.00476,0,à corriger,7,94,100.0
+harfbuzz,système,3,0,0,2,3,libharfbuzz0b,1,"1.4.2-1, 6.0.0+dfsg-3",,non / fin de vie,0.01812,0,migration / acceptation,6,95,100.0
+icu,système,2,0,0,3,5,"icu-devtools, libicu-dev, libicu63, libicu72",4,"63.1-6+deb10u1, 72.1-3",72.1-3+deb12u1,oui,0.01213,0,à corriger,6,96,100.0
+libzstd,système,2,0,0,3,6,libzstd1,1,1.3.8+dfsg-3,1.3.8+dfsg-3+deb10u2,oui,0.00431,0,à corriger,6,97,100.0
+patch,système,6,0,0,1,6,patch,1,2.7.6-7,,non / fin de vie,0.06492,0,migration / acceptation,6,98,100.0
+pcre3,système,1,0,0,6,10,"libpcre16-3, libpcre3, libpcre3-dev, libpcre32-3, libpcrecpp0v5",5,"2:8.39-12, 2:8.39-3",,non / fin de vie,0.04182,0,migration / acceptation,6,99,100.0
+unzip,système,3,0,0,2,3,unzip,1,"6.0-23+deb10u1, 6.0-28",6.0-23+deb10u3,oui,0.02421,0,à corriger,6,100,100.0
+brace-expansion,applicatif,5,0,0,1,5,brace-expansion,1,1.1.11,"5.0.8, 3.0.3, 2.1.3, 1.1.17",oui,0.00643,0,à corriger,5,101,100.0
+dbus,système,4,0,0,1,4,libdbus-1-3,1,1.12.20-0+deb10u1,1.12.28-0+deb10u1,oui,0.01405,0,à corriger,4,102,100.0
+graphite2,système,2,0,0,2,2,libgraphite2-3,1,"1.3.10-1, 1.3.14-1",1.3.14-1+deb12u1,oui,0.02169,0,à corriger,4,103,100.0
+minimatch,applicatif,4,0,0,1,4,minimatch,1,3.0.4,3.0.5,oui,0.01816,0,à corriger,4,104,100.0
+setuptools,applicatif,4,0,0,1,4,setuptools,1,57.5.0,83.0.0,oui,0.02617,0,à corriger,4,105,100.0
+djvulibre,système,3,0,0,1,9,"libdjvulibre-dev, libdjvulibre-text, libdjvulibre21",3,"3.5.28-2, 3.5.28-2+b1",3.5.28-2.2~deb12u1,oui,0.01042,0,à corriger,3,106,100.0
+libexif,système,3,0,0,1,6,"libexif-dev, libexif12",2,0.6.24-1+b1,0.6.24-1+deb12u1,oui,0.00193,0,à corriger,3,107,100.0
+procps,système,1,0,0,3,6,"libproc2-0, libprocps7, procps",3,"2:3.3.15-2, 2:4.0.2-3",,non / fin de vie,0.00256,0,migration / acceptation,3,108,100.0
+acl,système,2,0,0,1,2,libacl1,1,2.3.1-3,,non / fin de vie,0.00153,0,migration / acceptation,2,109,100.0
+dav1d,système,2,0,0,1,2,libdav1d6,1,1.0.0-2,1.0.0-2+deb12u1,oui,0.01835,0,à corriger,2,110,100.0
+file,système,2,0,0,1,6,"file, libmagic-mgc, libmagic1",3,1:5.30-1+deb9u3,,non / fin de vie,0.03581,0,migration / acceptation,2,111,100.0
+form-data,applicatif,2,0,0,1,2,form-data,1,2.3.2,"2.5.6, 3.0.5, 4.0.6",oui,0.01769,0,à corriger,2,112,100.0
+gcc-12,système,2,0,0,1,34,"cpp-12, g++-12, gcc-12, gcc-12-base, libasan8, libatomic1",17,12.2.0-14,12.2.0-14+deb12u1,oui,0.00906,0,à corriger,2,113,100.0
+golang.org/x/sys,applicatif,2,0,0,1,2,golang.org/x/sys,1,v0.0.0-20210817142637-7d9622a276b7,0.44.0,oui,0.02951,0,à corriger,2,114,100.0
+lcms2,système,2,0,0,1,4,"liblcms2-2, liblcms2-dev",2,2.14-2,2.14-2+deb12u1,oui,0.00938,0,à corriger,2,115,100.0
+libcap2,système,2,0,0,1,2,libcap2,1,1:2.66-4,1:2.66-4+deb12u3,oui,0.00201,0,à corriger,2,116,100.0
+m4,système,2,0,0,1,2,m4,1,1.4.19-3,,non / fin de vie,0.02957,0,migration / acceptation,2,117,100.0
 python3.5,système,2,0,0,1,8,"libpython3.5-minimal, libpython3.5-stdlib, python3.5, python3.5-minimal",4,3.5.3-1+deb9u5,,non / fin de vie,0.07074,0,migration / acceptation,2,118,100.0
 ajv,applicatif,1,0,0,1,1,ajv,1,6.12.6,"8.18.0, 6.14.0",oui,0.005,0,à corriger,1,119,100.0
 ansi-regex,applicatif,1,0,0,1,2,ansi-regex,1,"3.0.0, 4.1.0","6.0.1, 5.0.1, 4.1.1, 3.0.1",oui,0.03552,0,à corriger,1,120,100.0

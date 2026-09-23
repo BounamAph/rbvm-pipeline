@@ -1,6 +1,7 @@
 """Détections → CVE uniques → enrichissement KEV/EPSS → niveaux P1–P4 → regroupement par paquet → campagnes.
 
-Entrées : data/detections.parquet, data/kev.parquet, data/epss.parquet, (optionnel) data/nvd.parquet
+Entrées : data/detections.parquet, data/kev.parquet, data/epss.parquet, (optionnel) data/nvd.parquet,
+          (optionnel) data/exposition.json : exposition réseau de chaque poste, qui relève d'un niveau les CVE exposées
 Sorties : output/cve_uniques.parquet, output/paquets.csv, output/voie_rapide.csv, output/campagnes.csv
           output/ecarts_cvss.csv (si nvd.parquet présent), output/parc_stats.md, output/RBVM_parc.xlsx (6 onglets)
 """
@@ -22,7 +23,17 @@ hors_cve = det[~det.est_cve]
 # Le noyau est suivi à part : il ne se corrige pas par une mise à jour de l'image (conteneur) ni par le
 # catalogue applicatif (parc classique) — c'est une action d'infrastructure, avec redémarrage.
 noyau = d[d.est_noyau]
-d = d[~d.est_noyau]
+d = d[~d.est_noyau].copy()
+
+# Exposition réseau de chaque poste : déclarée à la main dans data/exposition.json (mini-CMDB : internet, interne, aucun).
+# Un poste absent du fichier est « inconnu » et ne déclenche aucune remontée de niveau : on ne suppose pas l'exposition.
+expo_path = DATA / "exposition.json"
+expo = {p: v["exposition"] for p, v in json.loads(expo_path.read_text(encoding="utf-8")).items()
+        if not p.startswith("_")} if expo_path.exists() else {}
+d["exposition"] = d.poste.map(expo).fillna("inconnu")
+inconnus = sorted(set(d.poste) - set(expo))
+if inconnus:
+    print(f"NOTE : exposition non déclarée pour {', '.join(inconnus)} (data/exposition.json) → traités comme non exposés")
 
 # ---------------------------------------------------------------- 1. CVE uniques : une ligne par CVE, avec son empreinte sur le parc
 cve = d.groupby("cve_id").agg(
@@ -37,6 +48,11 @@ cve = d.groupby("cve_id").agg(
     correctif_dispo=("version_corrigee", lambda s: s.notna().any()),
     date_publication=("date_publication", "min"),
 ).reset_index()
+# Sur combien de postes exposés à Internet la CVE est-elle présente ?
+cve = cve.merge(d[d.exposition == "internet"].groupby("cve_id").poste.nunique().rename("nb_postes_internet"),
+                on="cve_id", how="left")
+cve["nb_postes_internet"] = cve.nb_postes_internet.fillna(0).astype(int)
+cve["expose_internet"] = cve.nb_postes_internet > 0
 
 # ---------------------------------------------------------------- 2. enrichissement : KEV, EPSS, NVD (recoupement de criticité)
 cve = cve.merge(epss, on="cve_id", how="left").merge(
@@ -58,7 +74,14 @@ def niveau(r):
     if (pd.notna(r.epss) and r.epss >= SEUIL_EPSS) or (pd.notna(r.cvss) and r.cvss >= 9.0 and r.acces_reseau): return "P2"
     if pd.notna(r.cvss) and r.cvss >= 7.0: return "P3"
     return "P4"
-cve["niveau"] = cve.apply(niveau, axis=1)
+cve["niveau_base"] = cve.apply(niveau, axis=1)
+
+# Exposition : une CVE exploitable à distance (vecteur AV:N) sur un poste joignable depuis Internet monte d'un niveau.
+# P1 ne bouge pas (déjà au maximum). Une faille qui demande un accès local ne devient pas plus grave parce que
+# la machine est sur Internet : d'où la condition sur le vecteur réseau.
+MONTEE = {"P3": "P2", "P4": "P3"}
+cve["releve_exposition"] = cve.expose_internet & cve.acces_reseau & cve.niveau_base.isin(["P3", "P4"])
+cve["niveau"] = cve.niveau_base.where(~cve.releve_exposition, cve.niveau_base.map(MONTEE))
 # Statut de traitement : initialisé par le pipeline, à faire vivre à la main dans le classeur.
 # Valeurs possibles : à corriger, corrigé, fin de vie, will not fix, faux positif, non affecté, contourné, accepté
 cve["statut"] = cve.correctif_dispo.map({True: "à corriger", False: "fin de vie / sans correctif"})
@@ -120,6 +143,9 @@ n_bin = d.paquet.nunique()
 rep = cve.niveau.value_counts().reindex(["P1", "P2", "P3", "P4"]).fillna(0).astype(int)
 sans_fix = cve[~cve.correctif_dispo]
 def pct(a, b): return f"{100*a/b:.1f} %" if b else "n/a"
+postes_internet = sorted(p for p, e in expo.items() if e == "internet")
+rel = cve[cve.releve_exposition]
+urg_expo = cve[cve.niveau.isin(["P1", "P2"]) & cve.expose_internet]
 md = f"""# Parc : chiffres clés
 
 Sources : scans Trivy du {st.get('trivy',{}).get('fetched','?')} ({NB_POSTES} postes), CISA KEV {st.get('kev',{}).get('fetched','?')}, FIRST EPSS {str(st.get('epss',{}).get('score_date','?'))[:10]}{', NVD ' + st.get('nvd',{}).get('fetched','') if nvd is not None else ''}.
@@ -137,6 +163,11 @@ Sources : scans Trivy du {st.get('trivy',{}).get('fetched','?')} ({NB_POSTES} po
 P1 (KEV) : {rep.P1:,} · P2 : {rep.P2:,} · P3 : {rep.P3:,} · P4 : {rep.P4:,}
 - Système / applicatif : {cve.famille.value_counts().to_dict()}
 - CVE sans correctif disponible : {len(sans_fix):,} ({pct(len(sans_fix), n_cve)}), dont {int(sans_fix.niveau.isin(['P1','P2']).sum())} urgentes → remplacement, contournement ou acceptation
+
+## Exposition
+- Postes exposés à Internet (data/exposition.json) : {", ".join(postes_internet) or "aucun déclaré"}
+- CVE relevées d'un niveau parce qu'exploitables à distance sur un poste exposé : **{len(rel):,}** (P3 → P2 : {int((rel.niveau_base == "P3").sum()):,} · P4 → P3 : {int((rel.niveau_base == "P4").sum()):,})
+- CVE urgentes (P1 + P2) présentes sur un poste exposé à Internet : **{len(urg_expo):,}** sur {int(cve.niveau.isin(["P1", "P2"]).sum()):,}
 
 ## Voie rapide (P1 + P2)
 - {urg_total:,} CVE à traiter hors cycle, sur {int(cve[cve.niveau.isin(['P1','P2'])].nb_postes.sum()):,} couples (poste, CVE)
@@ -179,8 +210,10 @@ with pd.ExcelWriter(xl, engine="xlsxwriter", datetime_format="yyyy-mm-dd") as w:
     # Synthèse en premier : c'est ce que le manager ouvre
     syn = pd.DataFrame({"indicateur": ["Postes scannés", "Détections brutes", "CVE uniques", "Paquets concernés",
                                        "CVE P1 (KEV)", "CVE P2", "CVE P3", "CVE P4", "CVE sans correctif",
+                                       "CVE relevées d'un niveau par l'exposition", "CVE urgentes sur un poste exposé à Internet",
                                        f"CVE urgentes fermées par les {len(camp)} premières campagnes", "Part des urgentes fermées"],
                         "valeur": [NB_POSTES, n_det, n_cve, n_paq, rep.P1, rep.P2, rep.P3, rep.P4, len(sans_fix),
+                                   len(rel), len(urg_expo),
                                    urg_fermees, pct(urg_fermees, urg_total)]})
     sheet(syn, "Synthese", {"indicateur": 55, "valeur": 14})
     sheet(camp[["rang", "paquet", "famille", "nb_postes", "nb_cve", "cve_p1", "cve_p2", "version_corrigee",

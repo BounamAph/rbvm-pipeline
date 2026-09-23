@@ -67,10 +67,24 @@ def cvss_of(v):
     return None, None, None
 
 
-rows, sans_carte = [], []
+def surface_de(j):
+    """Ce que l'image expose, lu dans sa configuration : ports déclarés (EXPOSE) et utilisateur d'exécution.
+    Un utilisateur vide veut dire root : c'est le défaut de Docker quand le Dockerfile n'a pas d'instruction USER."""
+    conf = ((j.get("Metadata") or {}).get("ImageConfig") or {}).get("config") or {}
+    user = conf.get("User") or ""
+    return {
+        "ports": sorted((conf.get("ExposedPorts") or {}).keys()),
+        "utilisateur": user or "root (défaut)",
+        "root": user in ("", "root", "0", "0:0"),
+        "commande": " ".join(conf.get("Entrypoint") or conf.get("Cmd") or []),
+    }
+
+
+rows, sans_carte, surface = [], [], {}
 for f in files:
     j = json.loads(f.read_text(encoding="utf-8"))
     poste = j.get("ArtifactName") or f.stem
+    surface[poste] = surface_de(j)
     carte = carte_sources(j)
     if not carte:
         sans_carte.append(poste)
@@ -130,3 +144,7 @@ if zero:
     print(f"ATTENTION : {len(zero)} poste(s) sans aucune détection ({', '.join(zero)}). Sur une distribution en fin de vie, "
           "le scanner n'a plus de flux de sécurité : zéro ne veut pas dire sain, mais aveugle.")
 (DATA / "postes.json").write_text(json.dumps({"postes": postes.astype(int).to_dict(), "sans_detection": zero}, indent=2))
+(DATA / "surface.json").write_text(json.dumps(surface, indent=2, ensure_ascii=False), encoding="utf-8")
+avec_ports = {p: s["ports"] for p, s in surface.items() if s["ports"]}
+print(f"Surface : {len(avec_ports)} poste(s) avec des ports déclarés {avec_ports} ; "
+      f"{sum(s['root'] for s in surface.values())}/{len(surface)} tournent en root → data/surface.json")

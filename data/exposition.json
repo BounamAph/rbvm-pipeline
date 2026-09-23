@@ -1,0 +1,35 @@
+{
+  "_lisez_moi": "Mini-CMDB : exposition réseau de chaque poste, déclarée à la main (décision d'architecture). internet = joignable depuis l'extérieur ; interne = service réseau accessible seulement en interne ; aucun = pas de service réseau. Les ports, eux, sont lus automatiquement dans les scans Trivy (data/surface.json).",
+  "nginx:1.16": {
+    "exposition": "internet",
+    "justification": "serveur web frontal, joignable depuis Internet"
+  },
+  "wordpress:5.4": {
+    "exposition": "internet",
+    "justification": "site public : c'est sa fonction d'être joignable depuis Internet"
+  },
+  "tomcat:8.5.50": {
+    "exposition": "interne",
+    "justification": "serveur d'applications derrière le proxy nginx, pas joignable directement"
+  },
+  "postgres:10": {
+    "exposition": "interne",
+    "justification": "base de données, jamais exposée directement"
+  },
+  "node:12": {
+    "exposition": "aucun",
+    "justification": "image d'exécution sans port déclaré (tâches internes)"
+  },
+  "python:3.7": {
+    "exposition": "aucun",
+    "justification": "image d'exécution sans port déclaré (scripts, traitements)"
+  },
+  "debian:9": {
+    "exposition": "aucun",
+    "justification": "système de base sans service réseau"
+  },
+  "ubuntu:18.04": {
+    "exposition": "aucun",
+    "justification": "système de base sans service réseau"
+  }
+}
