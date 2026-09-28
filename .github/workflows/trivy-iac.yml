@@ -15,12 +15,22 @@ jobs:
       - name: Récupérer le code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: iac/ (volontairement vulnérable) - rapport seulement
+      - name: iac/ (volontairement vulnérable) - doit détecter des erreurs
+        id: scan
+        continue-on-error: true
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
           scan-type: config
           scan-ref: iac
-          exit-code: '0'
+          severity: HIGH,CRITICAL
+          exit-code: '1'
+
+      - name: Vérifier que Trivy a bien détecté les erreurs volontaires
+        if: steps.scan.outcome != 'failure'
+        run: |
+          echo "Trivy n'a rien détecté dans iac/ : le contrôle ne fonctionne plus."
+          exit 1
+          
   iac-secure:
     runs-on: ubuntu-latest
     steps:
