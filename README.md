@@ -35,6 +35,20 @@ Les CVE ne sont qu'une moitié du risque : dans le cloud, la plupart des inciden
 
 Constats principaux : garde-fous d'accès public S3 désactivés, SSH ouvert à `0.0.0.0/0`, **IMDSv1** sur la machine exposée (le maillon de l'attaque Capital One en 2019 : SSRF → métadonnées → identifiants IAM → S3), disque non chiffré, conteneur en root, image `latest`. Corrections : clé KMS gérée par le client avec rotation, versioning et journalisation du bucket, SSH restreint au réseau d'administration, IMDSv2 obligatoire, utilisateur non privilégié, image figée et minimale, `HEALTHCHECK`.
 
+### Contrôle continu (GitHub Actions)
+
+Le workflow `.github/workflows/trivy-iac.yml` lance `trivy config` à chaque push sur `main` et à chaque pull request, avec trois jobs :
+
+| Job | Rôle | Échoue si… |
+|---|---|---|
+| `iac-secure` | **contrôle bloquant** du code corrigé (HIGH et CRITICAL) | un constat grave apparaît dans `iac-secure/` |
+| `iac` | **test de détection** : le scanner doit trouver les erreurs volontaires de `iac/` | Trivy ne détecte **plus** rien (contrôle cassé, dossier déplacé, règle retirée) |
+| `sarif` | publie les constats des deux dossiers dans l'onglet *Security → Code scanning* (catégories `trivy-iac` et `trivy-iac-secure`) | — |
+
+Vérifié par un test négatif : une pull request qui rouvre SSH à `0.0.0.0/0` dans `iac-secure/` fait échouer le job bloquant. Les 17 alertes ouvertes dans *Code scanning* sont celles, volontaires, de `iac/`.
+
+Durcissement de la chaîne elle-même : permissions du jeton réduites à la lecture (`contents: read`, et `security-events: write` pour le seul job qui publie), aucun secret, et **actions épinglées sur l'empreinte complète de leur commit** plutôt que sur une étiquette de version. `trivy-action` a été victime en mars 2026 d'une attaque de la chaîne d'approvisionnement (CVE-2026-33634, catalogue KEV de la CISA) : 76 étiquettes de version ont été déplacées vers un code qui volait les secrets des pipelines. Une empreinte de commit, elle, ne peut pas être déplacée.
+
 Sources, datées dans `data/sources.json` à chaque exécution :
 - NVD (CVSS, vecteur, produits touchés via CPE) : feeds JSON 2.0, https://nvd.nist.gov/vuln/data-feeds
 - CISA KEV : https://www.cisa.gov/known-exploited-vulnerabilities-catalog
@@ -63,7 +77,8 @@ Produit dans `output/` : `RBVM_parc.xlsx` (6 onglets : Synthese, Campagnes, Voie
 - Sur le parc, l'exposition est portée par l'image, pas par le service : une faille dans une bibliothèque du conteneur wordpress est relevée même si le service web ne la charge pas. C'est une approximation prudente. Les ports sont ceux que l'image déclare, pas ceux réellement ouverts (à vérifier par un scan Nmap). « Root » désigne l'utilisateur de démarrage : nginx et postgres basculent ensuite vers un compte non privilégié.
 - Le parc est simulé par des images de conteneurs scannées avec Trivy : de vraies CVE sur de vrais paquets, mais des systèmes Linux où la mise à jour est plus simple que sur un parc Windows ; l'intérêt est la méthode, pas l'échelle.
 - Le CVSS retenu est v3.1, sinon v3.0, sinon v2 (colonne `cvss_version`) ; les CVE sans score sont conservées, jamais supprimées.
+- Le pipeline analyse les paquets des images, pas les dépendances de la chaîne de CI (actions GitHub) : une attaque comme CVE-2026-33634 lui échapperait. D'où l'épinglage des actions.
 
 ## Prochaines étapes
 
-Intégrer les constats IaC au classeur (onglet de suivi de remédiation avant / après) et les prioriser par sévérité et exposition ; lancer `trivy config` en CI (GitHub Actions) à chaque push. Brancher un inventaire réel (agent Wazuh Vulnerability Detection, export EDR) à la place des scans Trivy : le format d'entrée de `10_load_trivy.py` est le seul point à adapter. Vérifier l'exposition par un scan Nmap des conteneurs (ports déclarés contre ports réellement ouverts), ajouter un onglet « Surface d'attaque » au classeur et la criticité métier des postes dans la règle.
+Intégrer les constats IaC au classeur (onglet de suivi de remédiation avant / après) et les prioriser par sévérité et exposition ; mettre à jour les actions épinglées avec Dependabot ; étendre la CI au scan des images (`trivy image`). Brancher un inventaire réel (agent Wazuh Vulnerability Detection, export EDR) à la place des scans Trivy : le format d'entrée de `10_load_trivy.py` est le seul point à adapter. Vérifier l'exposition par un scan Nmap des conteneurs (ports déclarés contre ports réellement ouverts), ajouter un onglet « Surface d'attaque » au classeur et la criticité métier des postes dans la règle.
