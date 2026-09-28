@@ -30,7 +30,7 @@ jobs:
         run: |
           echo "Trivy n'a rien détecté dans iac/ : le contrôle ne fonctionne plus."
           exit 1
-          
+
   iac-secure:
     runs-on: ubuntu-latest
     steps:
@@ -45,3 +45,42 @@ jobs:
           severity: HIGH,CRITICAL
           exit-code: '1'
     
+
+  sarif:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: iac/ - rapport SARIF
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          scan-type: config
+          scan-ref: iac
+          format: sarif
+          output: trivy-iac.sarif
+          exit-code: '0'
+
+      - name: iac-secure/ - rapport SARIF
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          scan-type: config
+          scan-ref: iac-secure
+          format: sarif
+          output: trivy-iac-secure.sarif
+          exit-code: '0'
+
+      - name: Envoyer le rapport iac/ à l'onglet Security
+        uses: github/codeql-action/upload-sarif@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
+        with:
+          sarif_file: trivy-iac.sarif
+          category: trivy-iac
+
+      - name: Envoyer le rapport iac-secure/ à l'onglet Security
+        uses: github/codeql-action/upload-sarif@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
+        with:
+          sarif_file: trivy-iac-secure.sarif
+          category: trivy-iac-secure
