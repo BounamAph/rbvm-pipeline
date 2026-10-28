@@ -33,7 +33,9 @@ Les CVE ne sont qu'une moitié du risque : dans le cloud, la plupart des inciden
 | `iac/` (avant) | 11 | 6 | **17** | 10 |
 | `iac-secure/` (après) | 0 | 0 | **0** | 0 |
 
-Constats principaux : garde-fous d'accès public S3 désactivés, SSH ouvert à `0.0.0.0/0`, **IMDSv1** sur la machine exposée (le maillon de l'attaque Capital One en 2019 : SSRF → métadonnées → identifiants IAM → S3), disque non chiffré, conteneur en root, image `latest`. Corrections : clé KMS gérée par le client avec rotation, versioning et journalisation du bucket, SSH restreint au réseau d'administration, IMDSv2 obligatoire, utilisateur non privilégié, image figée et minimale, `HEALTHCHECK`.
+Deux constats sont **acceptés et justifiés** dans `iac-secure/main.tf` (`#trivy:ignore`), sur le bucket d'audit qui reçoit les journaux d'accès : AWS-0132 (AWS n'accepte que SSE-S3 sur une cible de journaux d'accès, pas de clé KMS) et AWS-0089 (pas de journaux sur le bucket de journaux).
+
+Constats principaux : garde-fous d'accès public S3 désactivés, SSH ouvert à `0.0.0.0/0`, **IMDSv1** sur la machine exposée (le maillon de l'attaque Capital One en 2019 : SSRF → métadonnées → identifiants IAM → S3), disque non chiffré, conteneur en root, image `latest`. Corrections : clé KMS gérée par le client avec rotation, versioning et journalisation du bucket (vers un bucket d'audit du même compte et de la même Région, comme l'exige AWS, avec une politique de bucket limitée au service de journalisation ; la centralisation dans un compte d'archives passerait par une réplication S3), SSH restreint au réseau d'administration, IMDSv2 obligatoire, utilisateur non privilégié, image figée et minimale, `HEALTHCHECK`.
 
 ### Contrôle continu (GitHub Actions)
 
