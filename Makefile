@@ -1,4 +1,7 @@
 PY=python3
+# Ces cibles sont des actions, pas des fichiers : sans cette ligne, le dossier iac/
+# fait croire à make que la cible iac est déjà à jour, et il ne lance rien.
+.PHONY: all sources parc iac nvd catalogue clean
 # Phase A (ce soir) : le parc. Phase B (demain) : le catalogue NVD.
 all: parc
 sources:
